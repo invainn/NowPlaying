@@ -2,20 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactLoading from 'react-loading';
 import * as actions from '../actions/actions';
-import {
-    Panel,
-} from 'react-bootstrap';
+import MovieListItem from './MovieListItem';
 
 class MovieList extends Component {
-    renderMovieCard(movie) {
-        return (
-            <Panel key={movie.id}>
-                <Panel.Heading>{movie.title}</Panel.Heading>
-                <Panel.Body>
-                    {movie.overview}
-                </Panel.Body>
-            </Panel>
-        );
+    constructor(props) {
+        super(props);
+        this.state = {
+            modal: false,
+            selectedMovie: 0
+        };
     }
 
     componentDidMount() {
@@ -23,8 +18,12 @@ class MovieList extends Component {
     }
 
     render() {
-        const { movies } = this.props;
-        console.log(movies);
+        let { movies } = this.props;
+        movies = movies.sort((a, b) => {
+            if(a.vote_average > b.vote_average) return -1;
+            if(a.vote_average < b.vote_average) return 1;
+            return 0;
+        });
 
         if(movies.length === 0) {
             return (
@@ -35,9 +34,11 @@ class MovieList extends Component {
         }
 
         return(
-            <div>
+            <div className="card-container">
                 {movies.map((movie) => {
-                    return this.renderMovieCard(movie);
+                    return (
+                        <MovieListItem movie={movie} />
+                    );
                 })}
             </div>
         );

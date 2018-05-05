@@ -9,6 +9,7 @@ export function fetchMovieList() {
 
             dispatch({type: FETCH_MOVIES, payload: req});
         } catch(e) {
+            // need to dispatch error here
         }
     };
 }
