@@ -13,6 +13,7 @@ import reducers from './reducers';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-rater/lib/react-rater.css';
+
 import App from './components/App';
 import Header from './components/Header';
 

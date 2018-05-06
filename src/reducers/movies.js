@@ -1,5 +1,5 @@
 import {
-    FETCH_MOVIES,
+    FETCH_MOVIES, 
 } from '../actions/actions';
 
 export default (state = {movies: []}, action) => {
