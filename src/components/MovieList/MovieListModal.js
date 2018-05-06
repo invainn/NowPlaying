@@ -29,7 +29,7 @@ class MovieListModal extends Component {
     }
 
     async fetchVideoId(movieId) {
-        let req = await axios.get(`http://localhost:3000/videoid/${movieId}`);
+        let req = await axios.get(`${process.env.FETCH_VIDEO}/${movieId}` || `http://localhost:3000/videoid/${movieId}`);
         this.setState({ videoId: req.data });
     }
 

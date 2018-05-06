@@ -29,6 +29,7 @@ class MovieListItem extends Component {
 
     render() {
         const { movie } = this.props;
+        const votes = parseInt((movie.vote_average/2).toFixed(1), 10);
         const poster = `${BASE_URL}/w500${movie.poster_path}`;
 
         return (
@@ -38,8 +39,8 @@ class MovieListItem extends Component {
                     <CardBody className="card-title">
                         <CardTitle className="card-text">{movie.title}</CardTitle>
                         <CardText className="card-rating">
-                            <Badge color="info">{(movie.vote_average/2).toFixed(1)}</Badge> 
-                            <Rater total={5} rating={(movie.vote_average/2).toFixed(1)} interactive={false} />
+                            <Badge color="info">{votes}</Badge> 
+                            <Rater total={5} rating={votes} interactive={false} />
                             <Button onClick={this.toggle.bind(this)} color="primary" className="card-button">More Info</Button>
                         </CardText>
                     </CardBody>

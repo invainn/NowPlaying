@@ -15,7 +15,7 @@ class MovieList extends Component {
         if(!movies || movies.length === 0) {
             return (
                 <div className="react-loading">
-                    <ReactLoading type="bubbles" color="#555555" height={75} width={75} />
+                    <ReactLoading type="bubbles" color="#FFFFFF" height={75} width={75} />
                 </div>
             );
         }
@@ -30,7 +30,7 @@ class MovieList extends Component {
             <div className="card-container">
                 {movies.map((movie) => {
                     return (
-                        <MovieListItem movie={movie} />
+                        <MovieListItem key={movie.id} movie={movie} />
                     );
                 })}
             </div>
