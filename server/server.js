@@ -1,8 +1,7 @@
 const app = require('express')();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const config = require('./config');
-const mdb = require('moviedb')(require('./config').MOVIE_API_KEY);
+const mdb = require('moviedb')(process.env.MOVIE_API_KEY || require('./config').MOVIE_API_KEY);
 
 app.use(cors());
 app.use(bodyParser.json({type: 'application/json'}));
