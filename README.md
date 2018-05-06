@@ -1,5 +1,4 @@
 ## NowPlaying
------------
 
 ### An app that displays movies currently playing in theaters
 
@@ -10,7 +9,7 @@
 * Bootstrap
 
 ### Backend
-* Nodejs
+* Node.js
 * Express
 * Moviedb
 
