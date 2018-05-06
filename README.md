@@ -1,7 +1,7 @@
 ## NowPlaying
 -----------
 
-###An app that displays movies currently playing in theaters
+### An app that displays movies currently playing in theaters
 
 #### Frontend
 * React
